@@ -1,6 +1,7 @@
 package api
 
 import api_models.ExampleContract
+import core.assertions.ApiAssertions
 import org.junit.jupiter.api.Test
 
 class ExampleApiTest {
@@ -12,6 +13,6 @@ class ExampleApiTest {
 
         println(response.statusCode)
 
-        assert(response.statusCode == 200)
+        ApiAssertions.assertStatusCode(response, 200)
     }
 }

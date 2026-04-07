@@ -1,10 +1,14 @@
 package api_models
 
+import core.ApiClient
 import io.restassured.response.Response
 
 object ExampleContract {
 
-    fun getExample(): Response {
-        return core.ApiClient.get("/example")
+    fun getExample(
+        path: String = "/example"
+    ): Response {
+
+        return ApiClient.get(path)
     }
 }
